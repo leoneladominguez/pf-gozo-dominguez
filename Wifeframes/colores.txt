@@ -1,0 +1,14 @@
+verde oscuro
+#676F54
+
+verde claro
+#ABE188
+
+gris
+#f3f0c3
+
+naranjita
+#E57A44
+
+naranjon
+#CF5C36
