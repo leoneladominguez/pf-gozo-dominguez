@@ -409,6 +409,8 @@ footer{
 @media (width <= 600px){
     .play-container{
         grid-area: qr;
+        border-top: 0;
+        border-bottom: 1px solid black;
     }
 }
 
