@@ -4,7 +4,7 @@
     :root{
         #grilla{
             display: grid;
-            grid-template-rows: 0px 60px 1fr 200px;
+            grid-template-rows: 0px 60px 1fr 220px;
             grid-template-columns: auto;
             grid-template-areas: 
             'inicio'
@@ -19,7 +19,7 @@
     :root{
         #grilla{
             display: grid;
-            grid-template-rows: 70px 55px 1fr 200px;
+            grid-template-rows: 70px 55px 1fr 220px;
             grid-template-columns: auto;
             grid-template-areas: 
             'inicio'
@@ -34,7 +34,7 @@
     :root{
         #grilla{
             display: grid;
-            grid-template-rows: 110px 55px 1fr 200px;
+            grid-template-rows: 110px 55px 1fr 250px;
             grid-template-columns: auto;
             grid-template-areas: 
             'inicio'
