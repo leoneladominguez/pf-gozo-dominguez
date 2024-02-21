@@ -1,50 +1,5 @@
 /*--------------FONDO---------------*/
 
-@media (width <= 600px){
-    :root{
-        #grilla{
-            display: grid;
-            grid-template-rows: 0px 60px 1fr 220px;
-            grid-template-columns: auto;
-            grid-template-areas: 
-            'inicio'
-            'barra'
-            'contenido'
-            'pie';
-        }
-    }
-}
-
-@media ( 600px < width ) and (width < 950px){    
-    :root{
-        #grilla{
-            display: grid;
-            grid-template-rows: 70px 55px 1fr 220px;
-            grid-template-columns: auto;
-            grid-template-areas: 
-            'inicio'
-            'barra'
-            'contenido'
-            'pie';
-        }
-    }
-}
-
-@media (width >= 950px){
-    :root{
-        #grilla{
-            display: grid;
-            grid-template-rows: 110px 55px 1fr 250px;
-            grid-template-columns: auto;
-            grid-template-areas: 
-            'inicio'
-            'barra'
-            'contenido'
-            'pie';
-        }
-    }
-}
-
 body{
     margin: 0%;
     font-size: 16px;
@@ -59,80 +14,6 @@ header{
     grid-area: inicio;
     background-color: rgba(255, 255, 255, 0.952);
 
-}
-
-@media (width <= 600px){
-    :root{
-        --boxlogo: 3rem;
-        --boxtitulo: 2rem;
-        --logoposition-r: 0.3%;
-        --logoposition-l: ;
-        --logoposition-t: 0.3%;
-
-        --tituloposition-r: 7rem;
-    }
-    .headertitulo{
-        display: none;
-    }
-    .headertitulomovil{
-        font-size: var(--boxtitulo);;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        position: absolute;
-        top: var(--logoposition-t);
-        left: var(--logoposition-l);
-        right: var(--tituloposition-r);
-        width: var(--boxlogo);
-        height: var(--boxlogo);
-        z-index: 15;
-    }
-    .navbar-brand{
-        display: none;
-    }
-}
-
-@media ( 600px < width ) and (width < 950px){    
-    :root{
-        --boxlogo: 3rem;
-        --boxtitulo: 3rem;
-        --logoposition-r: ;
-        --logoposition-l: 1%;
-        --logoposition-t: 1%;
-    }
-    .headertitulo{
-        display: flex;
-        font-size: var(--boxtitulo);;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        justify-content: center;
-        align-items: center;
-        z-index: 16;
-    }
-    .headertitulomovil{
-        display: none;
-    }
-}
-
-@media (width >= 950px){
-    :root{
-        --boxlogo: 5rem;
-        --boxtitulo: 4rem;
-        --logoposition-r: ;
-        --logoposition-l: 1%;
-        --logoposition-t: 1%;
-    }
-    .headertitulo{
-        display: flex;
-        font-size: var(--boxtitulo);;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        justify-content: center;
-        align-items: center;
-        z-index: 16;
-    }
-    .headertitulomovil{
-        display: none;
-    }
-    .navbar-brand{
-        display: none;
-    }
 }
 
 .logoprincipal{
@@ -274,16 +155,28 @@ main{
     flex-wrap: wrap;
 }
 
+:root{
+    --size-resto: 8rem;
+}
 .restoslistado-item{
-    width: 8rem;
-    height: 8rem;
+    width: var(--size-resto);
+    height: var(--size-resto);
     margin: 1rem 1rem;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.13);
 }
 
 .carousel{
     width: 30%;
- }
+}
+
+.restoslistado-img{
+    height: 100%;
+    width: 100%;
+}
+
+.restosmapa{
+    margin-top: 5%;
+}
 
 /*--------------PFREC---------------*/
 
@@ -330,10 +223,12 @@ footer{
 .grillafinal{
     display: grid;
     grid-template-columns: 1fr 30%;
-    grid-template-rows: 25% 1fr 1fr;
+    grid-template-rows: 25% 1px 1fr 1px 1fr;
     grid-template-areas: 
     'titulo nada'
+    'sep1 sep1'
     'info qr'
+    'sep2 sep2'
     'redes play';
 }
 
@@ -344,9 +239,27 @@ footer{
     font-size: 100%;
 }
 
+.sep1{
+    grid-area: sep1;
+    height: 1px;
+    margin: 0 5%;
+    border-top: 1px solid black;
+}
+
+.sep2{
+    grid-area: sep2;
+    height: 1px;
+    margin: 0 5%;
+    border-top: 1px solid black;
+}
+
+.texto{
+    font-size: 100%;
+    margin: 0;
+}
+
 .menufinal-info{
     grid-area: info;
-    border-top: 1px solid black;
     margin-left: 15%;
     margin-bottom: 2%;
 }
@@ -355,8 +268,6 @@ footer{
     margin-left: 15%;
     display: flex;
     align-items: center;
-    border-top: 1px solid black;
-
 }
 
 .logofinal{
@@ -377,7 +288,6 @@ footer{
 
 .qr-container{
     grid-area: qr;
-    border-top: 1px solid black;
     margin-right: 40%;
     display: flex;
     align-items: center;
@@ -390,11 +300,7 @@ footer{
     height: var(--boxqr);
     border: 1px solid black;
 }
-@media (width <= 600px){
-    .qr-item{
-        display: none;
-    }
-}
+
 
 .logoqrfinal{
     width: 100%;
@@ -403,16 +309,9 @@ footer{
 
 .play-container{
     grid-area: play;
-    border-top: 1px solid black;
     margin-right: 40%;
 }
-@media (width <= 600px){
-    .play-container{
-        grid-area: qr;
-        border-top: 0;
-        border-bottom: 1px solid black;
-    }
-}
+
 
 .play{
     width: auto;
@@ -426,3 +325,161 @@ footer{
     height: 2rem;
 }
 
+/**---------------MEDIAQUERIS-------------------**/
+
+@media (width <= 600px){
+    :root{
+        --boxlogo: 3rem;
+        --boxtitulo: 2rem;
+        --logoposition-r: 0.3%;
+        --logoposition-l: ;
+        --logoposition-t: 0.3%;
+
+        --tituloposition-r: 7rem;
+    }
+    .headertitulo{
+        display: none;
+    }
+    .headertitulomovil{
+        font-size: var(--boxtitulo);;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        position: absolute;
+        top: var(--logoposition-t);
+        left: var(--logoposition-l);
+        right: var(--tituloposition-r);
+        width: var(--boxlogo);
+        height: var(--boxlogo);
+        z-index: 15;
+    }
+    .navbar-brand{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    :root{
+        #grilla{
+            display: grid;
+            grid-template-rows: 0px 60px 1fr 220px;
+            grid-template-columns: auto;
+            grid-template-areas: 
+            'inicio'
+            'barra'
+            'contenido'
+            'pie';
+        }
+    }
+}
+
+@media ( 600px < width ) and (width < 950px){    
+    :root{
+        #grilla{
+            display: grid;
+            grid-template-rows: 70px 55px 1fr 220px;
+            grid-template-columns: auto;
+            grid-template-areas: 
+            'inicio'
+            'barra'
+            'contenido'
+            'pie';
+        }
+    }
+}
+
+@media (width >= 950px){
+    :root{
+        #grilla{
+            display: grid;
+            grid-template-rows: 110px 55px 1fr 250px;
+            grid-template-columns: auto;
+            grid-template-areas: 
+            'inicio'
+            'barra'
+            'contenido'
+            'pie';
+        }
+    }
+}
+
+@media ( 600px < width ) and (width < 950px){    
+    :root{
+        --boxlogo: 3rem;
+        --boxtitulo: 3rem;
+        --logoposition-r: ;
+        --logoposition-l: 1%;
+        --logoposition-t: 1%;
+    }
+    .headertitulo{
+        display: flex;
+        font-size: var(--boxtitulo);;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        justify-content: center;
+        align-items: center;
+        z-index: 16;
+    }
+    .headertitulomovil{
+        display: none;
+    }
+}
+
+@media (width >= 950px){
+    :root{
+        --boxlogo: 5rem;
+        --boxtitulo: 4rem;
+        --logoposition-r: ;
+        --logoposition-l: 1%;
+        --logoposition-t: 1%;
+    }
+    .headertitulo{
+        display: flex;
+        font-size: var(--boxtitulo);;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        justify-content: center;
+        align-items: center;
+        z-index: 16;
+    }
+    .headertitulomovil{
+        display: none;
+    }
+    .navbar-brand{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .qr-item{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .qr-item{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .qr-item{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .qr-item{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .play-container{
+        grid-area: qr;
+        border-top: 0;
+    }
+}
+
+@media (width <= 600px){
+    .texto{
+        font-size: 80%;
+        margin: 0;
+    }
+}
